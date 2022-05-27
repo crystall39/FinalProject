@@ -247,6 +247,17 @@ public class Controller implements ActionListener
 
                     infoLabel.setText(str);
 
+                    ImageIcon image = new ImageIcon("src/Artifact Sets/" + choice + ".png");
+                    Image imageData = image.getImage();
+                    Image scaledImage = imageData.getScaledInstance(500, 500, java.awt.Image.SCALE_SMOOTH);
+                    image = new ImageIcon(scaledImage);
+                    JFrame frame = new JFrame(artifact.getName());
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    JLabel artifactImage = new JLabel(image);
+                    frame.add(artifactImage);
+                    frame.pack();
+                    frame.setVisible(true);
+
                     //image (implement later)
 					/*
 					try
