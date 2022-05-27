@@ -1,5 +1,4 @@
 public class Characters // Character getter methods here
-// finished class
 {
     private String name;
     private String birthday;

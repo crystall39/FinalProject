@@ -19,10 +19,7 @@ import java.net.URL;
 import java.awt.Dimension;
 import java.util.ArrayList;
 
-// make fix scroll bar
-// finish artifacts RAYMOND (make sure they don't duplicate)
-
-public class Controller implements ActionListener
+public class Controller implements ActionListener //GUI Controller here
 {
     private JFrame frame;
     private JTextArea infoLabel;
@@ -62,13 +59,13 @@ public class Controller implements ActionListener
         logoWelcomePanel.add(titleLabel);
 
         JScrollPane scroll = new JScrollPane(infoLabel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
         //--------------
 
         infoLabel.setText("Select an option:\n1. Characters\n2. Weapons\n3. Artifacts\n");
         infoLabel.setWrapStyleWord(true);
         infoLabel.setLineWrap(true);
         infoLabel.setFont(new Font ("Helvetica", Font.BOLD, 15));
-
 
         infoPanel.add(scroll);
 
@@ -93,10 +90,6 @@ public class Controller implements ActionListener
 
         submitButton.addActionListener(this);
         resetButton.addActionListener(this);
-
-        //--------------
-
-
 
         //--------------
 
@@ -128,7 +121,6 @@ public class Controller implements ActionListener
                     }
                     number++;
                 }
-
                 infoLabel.setText(printedList);
             }
             else if (choice.equals("2"))
@@ -147,7 +139,6 @@ public class Controller implements ActionListener
                     }
                     number++;
                 }
-
                 infoLabel.setText(weaponsList);
             }
             else if (choice.equals("3")) // Artifacts
@@ -166,7 +157,6 @@ public class Controller implements ActionListener
                     }
                     number++;
                 }
-
                 infoLabel.setText(artifactsList);
             }
             else
@@ -244,7 +234,6 @@ public class Controller implements ActionListener
                             "\nMax Rarity: " + artifact.getMaxRarity() +
                             "\nTwo-piece Bonus: " + artifact.getTwoPiece() +
                             "\nFour-piece Bonus: " + artifact.getFourPiece();
-
                     infoLabel.setText(str);
 
                     ImageIcon image = new ImageIcon("src/Artifact Sets/" + choice + ".png");
@@ -257,25 +246,6 @@ public class Controller implements ActionListener
                     frame.add(artifactImage);
                     frame.pack();
                     frame.setVisible(true);
-
-                    //image (implement later)
-					/*
-					try
-					{
-            URL imageURL = new URL(artifact.getImageURL());
-            BufferedImage image = ImageIO.read(imageURL);
-            JFrame frame = new JFrame(artifact.getName());
-            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            JLabel artifactImage = new JLabel(new ImageIcon(image));
-            frame.add(artifactImage);
-            frame.pack();
-            frame.setVisible(true);
-	        }
-					catch (IOException i)
-					{
-	          System.out.println(i.getMessage());
-	        }
-					*/
                 }
                 else
                 {

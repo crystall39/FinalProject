@@ -17,7 +17,6 @@ public class WeaponsAPI // Get weapon info from API here
 
     public Weapons getWeapon(String name)
     {
-        // String weapon = makeAPICall(name);
         return parseWeapons(name);
     }
 

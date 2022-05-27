@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class CharactersAPI // Get character info from API here
-// finished class
+
 {
     private String baseURL;
 

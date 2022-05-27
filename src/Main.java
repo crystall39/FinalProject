@@ -1,8 +1,4 @@
-//Run Code:
-//javac -classpath .:./jars/* -d . *.java
-//java -classpath .:./jars/* Main
-
-public class Main
+public class Main // Run code here
 {
     public static void main(String[] args)
     {
