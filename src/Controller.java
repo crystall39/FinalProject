@@ -175,24 +175,16 @@ public class Controller implements ActionListener //GUI Controller here
                             "\nConstellation: " + character.getConstellation();
                     infoLabel.setText(str);
 
-                    //implement later
-					/*
-					try
-					{
-            URL imageURL = new URL(character.getImageURL());
-            BufferedImage image = ImageIO.read(imageURL);
-            JFrame frame = new JFrame(character.getName());
-            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            JLabel characterImage = new JLabel(new ImageIcon(image));
-            frame.add(characterImage);
-            frame.pack();
-            frame.setVisible(true);
-	        }
-					catch (IOException i)
-					{
-	          System.out.println(i.getMessage());
-	        }
-					*/
+                    ImageIcon image = new ImageIcon("src/Characters/" + choice + ".png");
+                    Image imageData = image.getImage();
+                    Image scaledImage = imageData.getScaledInstance(700, -1, Image.SCALE_SMOOTH);
+                    image = new ImageIcon(scaledImage);
+                    JFrame frame = new JFrame(character.getName());
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    JLabel characterImage = new JLabel(image);
+                    frame.add(characterImage);
+                    frame.pack();
+                    frame.setVisible(true);
                 }
                 else if (weaponClient.weaponList().contains(choice))
                 {
