@@ -200,24 +200,27 @@ public class Controller implements ActionListener //GUI Controller here
                             "\nAbility Description: " + weapon.getAbilityDescription() +
                             "\nLocation: " + weapon.getLocation();
                     infoLabel.setText(str);
-                    //implement later
-					/*
-				try
-					{
-            URL imageURL = new URL(weapon.getImageURL());
-            BufferedImage image = ImageIO.read(imageURL);
-            JFrame frame = new JFrame(weapon.getName());
-            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            JLabel weaponImage = new JLabel(new ImageIcon(image));
-            frame.add(weaponImage);
-            frame.pack();
-            frame.setVisible(true);
-	        }
-					catch (IOException i)
-					{
-	          System.out.println(i.getMessage());
-	        }
-					*/
+
+                    ImageIcon image = new ImageIcon();
+
+                    if (choice.equals("\"the catch\""))
+                    {
+                        image = new ImageIcon("src/Weapon/the catch.png");
+                    }
+                    else
+                    {
+                        image = new ImageIcon("src/Weapon/" + choice + ".png");
+                    }
+
+                    Image imageData = image.getImage();
+                    Image scaledImage = imageData.getScaledInstance(500, -1, Image.SCALE_SMOOTH);
+                    image = new ImageIcon(scaledImage);
+                    JFrame frame = new JFrame(weapon.getName());
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    JLabel weaponImage = new JLabel(image);
+                    frame.add(weaponImage);
+                    frame.pack();
+                    frame.setVisible(true);
                 }
                 else if (artifactClient.artifactList().contains(choice)) // need to fix getArtifact
                 {
